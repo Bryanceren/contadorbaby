@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        counterTxt1= findViewById(R.id.counterTxt1);
-        counterTxt1= findViewById(R.id.counterTxt2);
-        minusBtn= findViewById(R.id.minusBtn);
+        counterTxt1=(TextView) findViewById(R.id.counterTxt1);
+        counterTxt2=(TextView) findViewById(R.id.counterTxt2);
+        minusBtn= (Button) findViewById(R.id.minusBtn);
         minusBtn.setOnClickListener(clickListener);
-        plusBtn= findViewById(R.id.plusBtn);
+        plusBtn= (Button) findViewById(R.id.plusBtn);
         plusBtn.setOnClickListener(clickListener);
         initCounter();
 
@@ -45,18 +45,16 @@ public class MainActivity extends AppCompatActivity {
     private void initCounter(){
         counter1=0;
         counter2=0;
-        counterTxt1.setText(counter1);
-        counterTxt2.setText(counter1);
+
 
     }
     private void plusCounter(){
         counter2++;
-        counterTxt2.setText(counter2);
+        counterTxt2.setText(counter2+"");
     }
     ;
     private void minusCounter(){
         counter1++;
-        counterTxt1.setText(counter1);
-
+        counterTxt1.setText(counter1+"");
     }
 }
